@@ -15,8 +15,8 @@ public class TimeTEst {
         Date createTime = TimeUtil.parseStringToDate("2016-05-17 00:00:00", null);
         System.out.println(createTime.after(new Date()));
         Calendar date = Calendar.getInstance();
-        date.setTime(createTime);
-        date.add(Calendar.YEAR, +Integer.parseInt("3"));
+        date.setTime(new Date());
+        date.add(Calendar.DATE, +Integer.parseInt("3"));
         //倒计时结束后的时间
         Date scrap_year = date.getTime();
         System.out.println("三年后时间" + scrap_year);
@@ -45,6 +45,31 @@ public class TimeTEst {
         long days = time1 - time2;
         long day = days / (1000 * 60 * 60 * 24);
         System.out.println("sssss" +day);
+
+
+        Date date1 = new Date();
+        //获取达到报废年限后的日期
+        //Calendar date = Calendar.getInstance();
+        date.setTime(date1);
+        // 将时分秒,毫秒域清零
+        date.set(Calendar.HOUR_OF_DAY, 0);
+        date.set(Calendar.MINUTE, 0);
+        date.set(Calendar.SECOND, 0);
+        date.set(Calendar.MILLISECOND, 0);
+        //得到清0后的创建时间
+        date1 = date.getTime();
+        System.out.println(date1);
+        date.setTime(new Date());
+        date.add(Calendar.YEAR, -Integer.parseInt("3"));
+        date.set(Calendar.HOUR_OF_DAY, 0);
+        date.set(Calendar.MINUTE, 0);
+        date.set(Calendar.SECOND, 0);
+        date.set(Calendar.MILLISECOND, 0);
+        Date scrapYear = date.getTime();
+        System.out.println(scrapYear);
+
+        long dayss = TimeUtil.getDistanceDays(scrapYear);
+        System.out.println(dayss);
 
         
     }

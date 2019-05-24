@@ -30,9 +30,6 @@ public class NullPointerException {
             Car car = person.getCar();
             if (null != car){
                 Insurance insurance = car.getInsurance();
-                if (null != null){
-                    return insurance.getName();
-                }
             }
         }
 

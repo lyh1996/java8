@@ -29,6 +29,10 @@ public class BitOperation {
 
         System.out.println(bitOperation.findN(19));
 
+        int size = 1024 * 1024;
+
+        System.out.println(size);
+
     }
 
     /**

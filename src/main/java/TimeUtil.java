@@ -70,6 +70,22 @@ public class TimeUtil {
         return days;
     }
 
+    public static long getDistanceDays(Date date) {
+        long days = 0;
+        try {
+            //获取当前时间
+            Date now = new Date();
+            long time1 = date.getTime();
+            long time2 = now.getTime();
+            long diff = time1 - time2;
+            days = diff / (1000 * 60 * 60 * 24);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //正数表示在当前时间之后，负数表示在当前时间之前
+        return days;
+    }
+
     /**
      * 判断time是否在from，to之内
      * @param time 指定日期
