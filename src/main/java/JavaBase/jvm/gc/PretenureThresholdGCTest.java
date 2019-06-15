@@ -17,6 +17,7 @@ public class PretenureThresholdGCTest {
     public static void main(String[] args) {
         byte[] alloction1;
         alloction1 = new byte[4 * _1MB];
+        System.out.println(alloction1.length);
 
     }
 }

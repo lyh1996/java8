@@ -16,7 +16,8 @@ public class TimeTEst {
         System.out.println(createTime.after(new Date()));
         Calendar date = Calendar.getInstance();
         date.setTime(new Date());
-        date.add(Calendar.DATE, +Integer.parseInt("3"));
+        int num = (int) Double.parseDouble("3.5");
+        date.add(Calendar.DATE, +num);
         //倒计时结束后的时间
         Date scrap_year = date.getTime();
         System.out.println("三年后时间" + scrap_year);
