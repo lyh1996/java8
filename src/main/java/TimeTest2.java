@@ -34,5 +34,7 @@ public class TimeTest2 {
         //当前的时间
         System.out.println(dateTime1);
         System.out.println(dateTime);
+
+
     }
 }
