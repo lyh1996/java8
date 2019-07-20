@@ -22,12 +22,12 @@ public class ListRemove {
         list.add("a");
 
         //方法一：
-        for (int i=0; i<list.size(); i++) {
+        /*for (int i=0; i<list.size(); i++) {
             if ("a".equals(list.get(i))) {
                 list.remove(i);
                 i--;
             }
-        }
+        }*/
 
       //方法三
        /* Iterator<String> stringIterable =list.iterator();
@@ -41,6 +41,7 @@ public class ListRemove {
 
       //方法二:
         //list.removeIf(s -> s.contains("a"));
+
         //方法四
        /* for (int i=list.size()-1; i>=0; i--) {
             if ("a".equals(list.get(i))) {

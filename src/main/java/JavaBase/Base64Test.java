@@ -3,6 +3,8 @@ package JavaBase;
 import cn.hutool.core.codec.Base64Decoder;
 import cn.hutool.core.codec.Base64Encoder;
 
+import java.nio.charset.Charset;
+
 /**
  * @author 633805 LYH
  * @version V1.0
@@ -34,12 +36,12 @@ public class Base64Test {
             */
         try {
             //编码
-            String result= Base64Encoder.encode("德邦","gb2312") ;
+            String result= Base64Encoder.encode("德邦",Charset.forName("gb2312")) ;
 
             System.out.println(result);
 
             //解码
-            String  decode = Base64Decoder.decodeStr("tcKw7g==", "gb2312");
+            String  decode = Base64Decoder.decodeStr("tcKw7g==", Charset.forName("gb2312"));
             System.out.println(decode);
 
         } catch (Exception e) {

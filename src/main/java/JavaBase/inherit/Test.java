@@ -33,7 +33,8 @@ public class Test {
     private String getInherit(Inhert inhert) {
 
         String data = JsonUtils.toJsonString(inhert);
-        System.out.println(data);
+            System.out.println(data);
+
 
         return data;
 

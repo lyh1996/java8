@@ -1,4 +1,5 @@
-import JavaBase.User;
+package JavaBase;
+
 import cn.hutool.core.bean.BeanUtil;
 
 import java.util.HashMap;

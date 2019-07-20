@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
  * @author 633805 LYH
  * @version V1.0
  * @description stream
+ * 当循环遍历中不需要进行数据库操作时，使用stream()或普通循环来遍历。
+ * 当循环遍历中需要进行数据库操作时，使用parallelStream()来遍历，但是要注意多线程安全。
  * @create 2018-12-10 14:17
  * @since 1.7
  */

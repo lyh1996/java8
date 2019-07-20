@@ -1,7 +1,10 @@
 package JavaBase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author 633805 LYH
@@ -21,6 +24,19 @@ public class ListInitTest {
         //System.out.println(list1);
         System.out.println(list2);
         list1.stream().forEach(System.out::println);
+
+        String[] a = {"a","b"};
+        List<String> str = Stream.of(a).collect(Collectors.toList());
+        str.add("c");
+
+         str.forEach(System.out::println);
+
+        System.out.println("---------------分割线----------------");
+        String[] b = {"a","b"};
+        List<String> str1 = Arrays.asList(b);
+        str1.add("c");
+
+        str1.forEach(System.out::println);
 
 
 

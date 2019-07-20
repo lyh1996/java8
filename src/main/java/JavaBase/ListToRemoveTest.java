@@ -16,14 +16,16 @@ public class ListToRemoveTest {
     public static final int ABCD = ABC - 2;
     public static void main(String[] args) {
         //集合
-        List<String> list = new ArrayList<String>(){
-            {add("a");
-            add("b");
-            add("c");
-            add("a");
-            add("a");
-            add("d");
-            }};
+        List<String> list = new ArrayList<String>() {
+            {
+                add("a");
+                add("b");
+                add("c");
+                add("a");
+                add("a");
+                add("d");
+            }
+        };
 
         /*for (int i =0; i < list.size(); i++) {
             if ("a".equals(list.get(i))) {
@@ -50,7 +52,7 @@ public class ListToRemoveTest {
         }*/
 
         //移除元素法四
-       /* Iterator iterator = list.iterator();
+        /*Iterator iterator = list.iterator();
         while(iterator.hasNext()) {
             if ("a".equals(iterator.next())) {
                 iterator.remove();
@@ -63,45 +65,27 @@ public class ListToRemoveTest {
 
         //移除元素法五
 
-        /*for (String str : list) {
+       /* for (String str : list) {
             if ("a".equals(str)) {
                 list.remove(str);
                 break;
             }
         }*/
+
+
+        list.forEach(System.out::println);
        /* int count = 0;
         for(int i =ABCD ;i <= ABC; i++) {
             count++;
         }*/
-           // System.out.println(count);
-       // System.out.println(list);
+        // System.out.println(count);
+        // System.out.println(list);
 
         /*Integer total = 0;
         check(total);
         System.out.println(total);*/
 
-        StringBuffer A = new StringBuffer("A");
-        StringBuffer B = new StringBuffer("B");
-        opera(A,B);
-        System.out.println("---"+A +  " =====" +B);
 
-        String C = "C";
-        String D = "D";
-        opera2(C,D);
-        System.out.println("---"+C +  " =====" +D);
-
-
-    }
-
-    private static void opera2(String c, String d) {
-        c+=d;
-        d = c;
-    }
-
-    private static void opera(StringBuffer a, StringBuffer b) {
-        a.append(b);
-        b = a;
-    }
 
 
    /* private static void check(Integer total) {
@@ -109,4 +93,5 @@ public class ListToRemoveTest {
             total +=1;
         }
     }*/
+    }
 }

@@ -1,3 +1,5 @@
+package JavaBase;
+
 import java.io.Serializable;
 
 /**

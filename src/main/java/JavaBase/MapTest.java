@@ -1,3 +1,5 @@
+package JavaBase;
+
 import java.util.HashMap;
 import java.util.Map;
 

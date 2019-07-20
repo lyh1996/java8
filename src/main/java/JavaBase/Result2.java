@@ -1,3 +1,5 @@
+package JavaBase;
+
 /**
  * @author 633805 LYH
  * @version V1.0
