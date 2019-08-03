@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * @create 2019-07-02 20:37
  * @since 1.7
  */
-public class ForTest {
+public class ForOptimizationTest {
 
     public static void main(String[] args) {
 

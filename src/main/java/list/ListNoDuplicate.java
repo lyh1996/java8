@@ -1,4 +1,4 @@
-package JavaBase;
+package list;
 
 import java.util.List;
 import java.util.stream.Collectors;

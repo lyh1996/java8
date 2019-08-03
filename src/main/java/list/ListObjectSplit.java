@@ -1,4 +1,6 @@
-package JavaBase;
+package list;
+
+import JavaBase.User;
 
 import java.util.ArrayList;
 import java.util.List;

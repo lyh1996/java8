@@ -1,4 +1,6 @@
-package JavaBase;
+package testMap;
+
+import JavaBase.User;
 
 import java.util.Comparator;
 import java.util.List;
@@ -13,7 +15,7 @@ import java.util.stream.Collectors;
  * @create 2019-04-11 15:21
  * @since 1.7
  */
-public class Test {
+public class MapListTest {
     public static void main(String[] args) {
 
         Map<String, User> map = new TreeMap();

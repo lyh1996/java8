@@ -1,4 +1,4 @@
-package JavaBase.singleton;
+package singleton;
 
 /**
  * 单利模式 静态内部类方法

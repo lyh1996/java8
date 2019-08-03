@@ -1,4 +1,4 @@
-package JavaBase.singleton;
+package singleton;
 
 /**
  * 懒汉式--双重检查锁

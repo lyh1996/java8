@@ -1,7 +1,10 @@
-package JavaBase;
+package list;
+
+import JavaBase.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author 633805 LYH
@@ -32,11 +35,11 @@ public class TwoListOperate {
         list2.forEach(System.out::println);
 
         //根据uid补全list2中的对象信息
-       /* for (JavaBase.User listUser : list2) {
+       for (JavaBase.User listUser : list2) {
             String uid1 = listUser.getUid();
-            Optional<JavaBase.User> optStu = list1.stream().filter(user1 -> user1.getUid().equals(uid1)).findFirst();
+            Optional<User> optStu = list1.stream().filter(user1 -> user1.getUid().equals(uid1)).findFirst();
             listUser.setName(optStu.get().getName());
-            }*/
+            }
 
 
 

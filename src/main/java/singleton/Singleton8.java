@@ -1,4 +1,4 @@
-package JavaBase.singleton;
+package singleton;
 
 import java.util.concurrent.atomic.AtomicReference;
 

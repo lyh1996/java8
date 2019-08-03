@@ -1,4 +1,4 @@
-package JavaBase.singleton;
+package singleton;
 
 /**
  * @author 633805 LYH
