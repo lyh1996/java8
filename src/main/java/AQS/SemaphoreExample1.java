@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 /**
  * @author 633805 LYH
  * @version V1.0
- * @description 需要一次性拿一个许可的情况
+ * @description 需要一次性拿一个许可的情况   控制并发数量
  * @create 2019-04-30 8:53
  * @since 1.7
  */

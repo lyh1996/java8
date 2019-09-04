@@ -53,17 +53,17 @@ Arrays.asList 的参数如果是基本类型的数组时，需要留意返回值
         //赋值：
 
 //法一
-        //ArrayList B　＝new ArrayList<>(A);
+        //ArrayList B　＝new ArrayList<>(ParticularlyVipBuyer);
 
 //法三
-        //ArrayList B　＝A.clone();
+        //ArrayList B　＝ParticularlyVipBuyer.clone();
 
 //法二
        // ArrayList B　＝new ArrayList<String>();
-       // B.addAll(A);
+       // B.addAll(ParticularlyVipBuyer);
 
 //法四
-        //for (String s : A)
+        //for (String s : ParticularlyVipBuyer)
         //    B.add(s);
 
 

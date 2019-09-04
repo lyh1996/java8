@@ -48,8 +48,10 @@ public class BigDecimalTest {
         BigDecimal pp1 = new BigDecimal("1");
         BigDecimal pp2 = new BigDecimal("3");
 
+        // 乘法
         BigDecimal pp3 =  (pp1.multiply(pp2));
         System.out.println(pp3);
+        // 除法
         BigDecimal pp4 = pp1.divide(pp3, 2, BigDecimal.ROUND_HALF_UP);
         System.out.println("除数为："+pp4);
     }

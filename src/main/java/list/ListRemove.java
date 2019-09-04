@@ -1,6 +1,7 @@
 package list;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * @author 633805 LYH
@@ -30,12 +31,12 @@ public class ListRemove {
         }*/
 
       //方法三
-       /* Iterator<String> stringIterable =list.iterator();
+        Iterator<String> stringIterable =list.iterator();
         while (stringIterable.hasNext()) {
             if ("a".equals(stringIterable.next())) {
                 stringIterable.remove();
             }
-        }*/
+        }
 
 
 
