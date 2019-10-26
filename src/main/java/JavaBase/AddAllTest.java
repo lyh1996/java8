@@ -54,19 +54,12 @@ public class AddAllTest {
         System.out.println(System.currentTimeMillis() - start2);
 
 
-
-
-
-
-
 /*
-        List<User> userList = Stream.of(user).collect(Collectors.toList());
-        List<User> userList2 = Stream.of(user).collect(Collectors.toList());
+        List<Student> userList = Stream.of(user).collect(Collectors.toList());
+        List<Student> userList2 = Stream.of(user).collect(Collectors.toList());
 
        // userList.addAll(userList2);
         userList = Stream.of(userList.stream(), userList2.stream()).flatMap(Function.identity()).distinct().collect(Collectors.toList());;
-
-
 
 
         userList.forEach(System.out::println);*/

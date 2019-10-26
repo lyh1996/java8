@@ -15,13 +15,13 @@ public class SortTest {
 
     public static void main(String[] args) {
 
-      /*  User user1 = new User("1", "lyh1", 21);
+      /*  Student user1 = new Student("1", "lyh1", 21);
 
-        Map<String, User> map = new HashMap<>();
+        Map<String, Student> map = new HashMap<>();
 
         map.put(user1.getUid(), user1);
 
-        List<User> list = new ArrayList<>();
+        List<Student> list = new ArrayList<>();
         list.add(map.get("1"));
 
         list.forEach(user -> user.setName("hello"));

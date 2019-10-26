@@ -40,9 +40,9 @@ public class ForOptimizationTest {
         }
 
         //方法一
-        /*for (User us : list1 ) {
+        /*for (Student us : list1 ) {
 
-            for(User user : list2) {
+            for(Student user : list2) {
                 if (user.getAge() == us.getAge()) {
                     user.setName(us.getName());
                 }
@@ -69,13 +69,13 @@ public class ForOptimizationTest {
         }*/
 
         //方法四
-        /*Map<Integer, User> map = new HashMap<>();
+        /*Map<Integer, Student> map = new HashMap<>();
         for (int i = 0; i < list1.size(); i++) {
             map.put(list1.get(i).getAge(), list1.get(i));
         }
 
         for (int j =0; j < list2.size(); j ++) {
-            //Map<User, Integer> map1 = new HashMap<>();
+            //Map<Student, Integer> map1 = new HashMap<>();
             //map1.put(list2.get(j), list2.get(j).getAge());
 
             if (map.get(list2.get(j).getAge()) != null) {

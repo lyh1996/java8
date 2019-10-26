@@ -34,11 +34,11 @@ public class MapListTest {
         Map<String, Object> map2 = list.stream().collect(Collectors.toMap(User::getUid, a -> a,(k1, k2)->k1));
 
         map2.forEach((k, v) -> System.out.println("键" + k +"值" + v ));
-       /* List<JavaBase.User> list2 = map.entrySet().stream().sorted(Comparator.comparing(Map.Entry::getValue))
-                .map(e -> new JavaBase.User(e.getKey(), e.getValue())).collect(Collectors.toList());
+       /* List<JavaBase.Student> list2 = map.entrySet().stream().sorted(Comparator.comparing(Map.Entry::getValue))
+                .map(e -> new JavaBase.Student(e.getKey(), e.getValue())).collect(Collectors.toList());
 
-        List<JavaBase.User> list3 = map.entrySet().stream().sorted(Map.Entry.comparingByKey())
-                .map(e -> new JavaBase.User(e.getKey(), e.getValue())).collect(Collectors.toList());*/
+        List<JavaBase.Student> list3 = map.entrySet().stream().sorted(Map.Entry.comparingByKey())
+                .map(e -> new JavaBase.Student(e.getKey(), e.getValue())).collect(Collectors.toList());*/
     }
 
 

@@ -22,8 +22,8 @@ public class FastJsonToList {
         Result<List<User>> result= Result.ok(list);
 
         List<User> userList = null;
-        //userList =JavaBase.JsonUtil.parseArray("["+JavaBase.JsonUtil.toJsonString(result.getData())+"]",JavaBase.User.class);
-       // userList = JavaBase.JsonUtil.parseAnyObject( "["+JavaBase.JsonUtil.toJsonString(result.getData())+"]",new TypeReference<List<JavaBase.User>>(){});
+        //userList =JavaBase.JsonUtil.parseArray("["+JavaBase.JsonUtil.toJsonString(result.getData())+"]",JavaBase.Student.class);
+       // userList = JavaBase.JsonUtil.parseAnyObject( "["+JavaBase.JsonUtil.toJsonString(result.getData())+"]",new TypeReference<List<JavaBase.Student>>(){});
         userList = JsonUtil.parseAnyObject( JsonUtil.toJsonString(result.getData()),new TypeReference<List<User>>(){});
         userList = result.getData();
         System.out.println(userList);
