@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * @author 633805 LYH
  * @version V1.0
- * @description 对类的描述
+ * @description 获取一个某个月的第一天
  * @create 2019-04-10 10:30
  * @since 1.7
  */
