@@ -1,3 +1,7 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @author 633805 LYH
  * @version V1.0
@@ -11,5 +15,9 @@ public class TestMobilphone {
         String str = "15874716591";
         str = str.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
         System.out.println(str);
+
+        String string = "1";
+        List<Integer> list = Arrays.stream(string.split(",")).map(s -> Integer.parseInt(s.trim())).collect(Collectors.toList());
+        System.out.println(list);
     }
 }

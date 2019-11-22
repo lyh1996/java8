@@ -36,6 +36,12 @@ list3 = list3.stream().collect(Collectors.collectingAndThen(Collectors.toCollect
 7.将String转换成List<String> 以指定符号分割
 List<String> list3 = Arrays.stream(names.split("\\|")).map(String::trim).collect(Collectors.toList());
 
+将String变成List<Long>
+private List<Long> stringToLongList (String strArr){
+        return Arrays.stream(strArr.split(","))
+                .map(s -> Long.parseLong(s.trim()))
+                .collect(Collectors.toList());
+
 8.数组变List
 String[] arrays = new String[]{"a", "b", "c"};
 List<String> listStrings = Stream.of(arrays).collector(Collectors.toList());
