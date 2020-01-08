@@ -1,0 +1,10 @@
+package StrategyMode.one;
+
+/**
+ * @author LYH
+ * @date 2019/12/19 17:43
+ */
+public interface RoleOperation {
+    String op();
+// 表示某个角色可以做哪些op操作
+}
