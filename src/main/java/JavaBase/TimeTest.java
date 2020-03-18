@@ -10,7 +10,7 @@ import java.util.Date;
  * @create 2019-05-14 19:21
  * @since 1.7
  */
-public class TimeTEst {
+public class TimeTest {
     public static void main(String[] args) {
         //创建时间  2018-10-18 09:25:30
         Date createTime = TimeUtil.parseStringToDate("2016-05-17 00:00:00", null);

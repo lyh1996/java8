@@ -10,7 +10,7 @@ package JavaBase;
 public class BitOperation {
     public static void main(String[] args) {
         BitOperation bitOperation = new BitOperation();
-       boolean num = bitOperation.isOddNumber(1);
+        boolean num = bitOperation.isOddNumber(5);
         System.out.println("是否是奇数？" + num);
         int a = 5;
         int b = 6;
@@ -45,8 +45,7 @@ public class BitOperation {
      * @date: 2019/5/21 9:15
      */
     private boolean isOddNumber(int a) {
-        int num = a & 1;
-        return a == 1;
+        return (a & 1) == 1;
     }
 
     /**

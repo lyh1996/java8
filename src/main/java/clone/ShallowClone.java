@@ -17,6 +17,8 @@ public class ShallowClone {
         System.out.println("学生1：" + student1.getNumber());
         System.out.println("学生2：" + student2.getNumber());
 
+        // 不用对引用的对象进行复制   也就是俗称的浅克隆
+
 
     }
 }
