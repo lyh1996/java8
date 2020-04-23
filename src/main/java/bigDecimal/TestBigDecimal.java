@@ -20,7 +20,7 @@ public class TestBigDecimal {
         // 0.06
         System.out.println(ArithUtil.add(0.05, 0.01));
         // 0.58
-        System.out.println(ArithUtil.sub(1.0, 0.42));
+        System.out.println(ArithUtil.sub(0.1, 0.42));
         // 401.5
         System.out.println(ArithUtil.mul(4.015, 100));
         // 1.233

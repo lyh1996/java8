@@ -9,17 +9,22 @@ package Exception;
  */
 public class Test {
     public static void main(String[] args) {
+        int count = 0;
         try {
             Method1();
 
         }catch (MyException e) {
+            count++;
             System.out.println("进入自定义异常");
             System.out.println(e.getMessage());
         }catch (MyException2 e) {
+            count++;
             System.out.println("123");
         }catch (Exception e) {
+            count++;
             System.out.println("Exception异常");
         }
+        System.out.println(count);
     }
     public static void Method1() {
         try{
