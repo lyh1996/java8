@@ -17,9 +17,9 @@ public class TwoListOperate {
     public static void main(String[] args) {
 
         List<User> list1 = new ArrayList<User>(){{
-            add(new User("1", "lyh1",18));
-            add(new User("2", "lyh2",19));
-            add(new User("3", "lyh3",20));
+            add(new User("1", "lyh1", 18, 1.0));
+            add(new User("2", "lyh2", 19, 1.0));
+            add(new User("3", "lyh3", 20, 1.0));
         }};
 
         List<User> list2 = new ArrayList<>();

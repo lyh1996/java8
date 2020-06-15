@@ -27,6 +27,8 @@ public class User implements Serializable{
 
     private Integer age;
 
+    private Double money;
+
     /**
      * 创建时间
      */

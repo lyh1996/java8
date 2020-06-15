@@ -113,3 +113,45 @@ isMap.forEach((k,v) -> {
         });
 
 
+
+
+ public static <T, V> Set<T> toSet(Collection<V> collection, Function<V, T> f) {
+        if (CollectionUtils.isNotEmpty(collection)) {
+            return toStream(collection, f).collect(Collectors.toSet());
+        } else {
+            return Collections.emptySet();
+        }
+    }
+
+    public static <T, V> List<T> toList(Collection<V> collection, Function<V, T> f) {
+        if (CollectionUtils.isNotEmpty(collection)) {
+            return toStream(collection, f).collect(Collectors.toList());
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public static <T, K, V> Map<K, V> toMap(Collection<T> collection, Function<T, K> key, Function<T, V> value) {
+        if (CollectionUtils.isNotEmpty(collection)) {
+            return collection.stream().collect(Collectors.toMap(key, value, (o, n) -> o));
+        } else {
+            return Collections.emptyMap();
+        }
+    }
+
+    public static <T, K> Map<K, T> toMapIdentity(Collection<T> collection, Function<T, K> key) {
+        if (CollectionUtils.isNotEmpty(collection)) {
+            return collection.stream().collect(Collectors.toMap(key, Function.identity(), (o, n) -> o));
+        } else {
+            return Collections.emptyMap();
+        }
+    }
+
+    private static <K, V> Stream<K> toStream(Collection<V> collection, Function<V, K> f) {
+        return toStream(collection, f, false);
+    }
+
+    private static <K, V> Stream<K> toStream(Collection<V> collection, Function<V, K> f, boolean parallel) {
+        Stream<K> kStream = collection.stream().filter(Objects::nonNull).map(f).filter(Objects::nonNull);
+        return parallel ? kStream.parallel() : kStream;
+    }

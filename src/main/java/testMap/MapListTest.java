@@ -20,8 +20,8 @@ public class MapListTest {
 
         Map<String, User> map = new TreeMap();
 
-        User user1 = new User("1", "lyh1", 12);
-        User user2 = new User("2", "lyh2", 12);
+        User user1 = new User("1", "lyh1", 12, 1.0);
+        User user2 = new User("2", "lyh2", 12, 1.0);
         map.put("user1", user1);
         map.put("user2", user2);
         //map转List

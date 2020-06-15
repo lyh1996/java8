@@ -23,10 +23,10 @@ public class ListObjectSplit {
 
         List<User> list2 = new ArrayList<>();
 
-        User user1 = new User("1", "lyh1", 21);
+        User user1 = new User("1", "lyh1", 21, 1.0);
 
-        User user2 = new User("2", "lyh2", 21);
-        User user3 = new User("2", "lyh2", 22);
+        User user2 = new User("2", "lyh2", 21, 1.0);
+        User user3 = new User("2", "lyh2", 22, 1.0);
 
         list1.add(user1);
 

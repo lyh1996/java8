@@ -1,6 +1,5 @@
 package JavaBase;
 
-import JavaBase.User;
 import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
 import org.apache.poi.ss.usermodel.*;
@@ -20,7 +19,7 @@ import java.util.Map;
 public class ExcelTest {
     public static void main(String[] args) {
 
-        List<User> list = Arrays.asList(new User("1", "lyh", 12), new User("2", "小老弟", 23));
+        List<User> list = Arrays.asList(new User("1", "lyh", 12, 1.0), new User("2", "小老弟", 23, 1.0));
         Map<String, String> map = new HashMap<>();
 
         map.put("uid", "编号");

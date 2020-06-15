@@ -17,9 +17,9 @@ public class ObjectByFiledSort {
     public static void main(String[] args) {
 
         //构造user对象
-        User user1 = new User("1", "lyh",21);
+        User user1 = new User("1", "lyh", 21, 1.0);
 
-        User user2 = new User("2", "abc",18);
+        User user2 = new User("2", "abc", 18, 1.0);
 
         List<User> list = new ArrayList<User>();
 

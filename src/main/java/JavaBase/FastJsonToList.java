@@ -15,7 +15,7 @@ import java.util.List;
 public class FastJsonToList {
     public static void main(String[] args) {
 
-        User user = new User("1", "lyh", 21);
+        User user = new User("1", "lyh", 21, 1.1);
         List<User> list = new ArrayList<>();
         list.add(user);
 
