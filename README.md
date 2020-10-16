@@ -155,3 +155,14 @@ isMap.forEach((k,v) -> {
         Stream<K> kStream = collection.stream().filter(Objects::nonNull).map(f).filter(Objects::nonNull);
         return parallel ? kStream.parallel() : kStream;
     }
+    
+    
+     //求最大值
+            BigDecimal max = userList.stream().map(User::getWeight).max((x1, x2) -> x1.compareTo(x2)).get();
+            //求最小值
+            BigDecimal min = userList.stream().map(User::getWeight).min((x1, x2) -> x1.compareTo(x2)).get();
+            //求和
+            BigDecimal sum = userList.stream().map(User::getWeight).reduce(BigDecimal.ZERO, BigDecimal::add);
+            //求平均值
+            BigDecimal average = userList.stream().map(User::getWeight).reduce(BigDecimal.ZERO, BigDecimal::add).divide(BigDecimal.valueOf(userList.size()), 2, BigDecimal.ROUND_HALF_UP);
+
