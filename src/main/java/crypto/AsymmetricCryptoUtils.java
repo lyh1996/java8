@@ -26,6 +26,7 @@ import java.util.Objects;
  * 签名：使用私钥加密，公钥解密。用于让所有公钥所有者验证私钥所有者的身份并且用来防止私钥所有者发布的内容被篡改，但是不用来保证内容不被他人获得。
  * 加密：用公钥加密，私钥解密。用于向公钥所有者发布信息,这个信息可能被他人篡改,但是无法被他人获得。
  *
+ * @author Administrator
  */
 @Slf4j
 public class AsymmetricCryptoUtils {

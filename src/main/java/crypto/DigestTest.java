@@ -19,9 +19,6 @@ public class DigestTest {
 
         String pwdValue = DigestUtil.bcrypt(name);
 
-
-
-
         System.out.println(pwdValue);
         // 验证密码是否和密文一样
         System.out.println("是否一样  true表示一样" + DigestUtil.bcryptCheck(name, pwdValue));

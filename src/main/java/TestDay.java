@@ -20,11 +20,11 @@ public class TestDay {
 
         // 计算两个日期之间相差的天数
         // "2020-1-1","2019-12-25"
-        int day = TimeUtil.differentDays(TimeUtil.parseStringToDate("2020-1-1", "yyyy-MM-dd"), TimeUtil.parseStringToDate("2019-12-25", "yyyy-MM-dd"));
+        int day = TimeUtil.differentDays(TimeUtil.parseStringToDate("2020-8-24", "yyyy-MM-dd"), TimeUtil.parseStringToDate("2020-11-04", "yyyy-MM-dd"));
         System.out.println(day);
 
-        LocalDate endDate = LocalDate.of(2020, Month.JANUARY, 1);
-        LocalDate startDate = LocalDate.of(2019, Month.DECEMBER, 25);
+        LocalDate endDate = LocalDate.of(2020, Month.AUGUST, 24);
+        LocalDate startDate = LocalDate.of(2020, Month.NOVEMBER, 4);
 
         long daysDiff = ChronoUnit.DAYS.between(startDate, endDate);
 
