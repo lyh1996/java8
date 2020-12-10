@@ -25,6 +25,8 @@
  * jgs {____/ \____}
  */
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * @author LYH
  * @date 2020/07/18 17:34
@@ -46,6 +48,8 @@ public class Test222 {
 
         System.out.println(atomicInteger.decrementAndGet());*/
 
-
+        JSONObject jsonData = new JSONObject();
+        jsonData.put("completeNotify", 0);
+        System.out.println(jsonData);
     }
 }
