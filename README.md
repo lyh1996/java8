@@ -166,3 +166,33 @@ isMap.forEach((k,v) -> {
             //求平均值
             BigDecimal average = userList.stream().map(User::getWeight).reduce(BigDecimal.ZERO, BigDecimal::add).divide(BigDecimal.valueOf(userList.size()), 2, BigDecimal.ROUND_HALF_UP);
 
+//排序操作
+            results = results.stream().sorted(Comparator.comparing(DivideDTO::getLendRate)).collect(Collectors.toList());
+    /**
+    * 将对象属性转化为map结合
+    */
+    public static <T> Map<Object, Object> beanToMap(T bean) {
+     Map<Object, Object> map = new HashMap<>();
+     if (bean != null) {
+      BeanMap beanMap = BeanMap.create(bean);
+      for (Object key : beanMap.keySet()) {
+       map.put(key, beanMap.get(key));
+      }
+     }
+     return map;
+    }
+    
+    /**
+    * 移除map中的value空值
+    *
+    * @param map
+    * @return
+    */
+    public static void removeNullValue(Map map) {
+     Set set = map.keySet();
+     for (Iterator iterator = set.iterator(); iterator.hasNext(); ) {
+      Object obj = (Object) iterator.next();
+      Object value = (Object) map.get(obj);
+      remove(value, iterator);
+     }
+    }

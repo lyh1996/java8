@@ -25,14 +25,19 @@
  * jgs {____/ \____}
  */
 
-import com.alibaba.fastjson.JSONObject;
+import cn.hutool.extra.emoji.EmojiUtil;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author LYH
  * @date 2020/07/18 17:34
  */
 public class Test222 {
-    public static void main(String[] args) {
+
+    public static AtomicInteger count = new AtomicInteger(0);
+
+    public static void main(String[] args) throws InterruptedException {
        /* double lendRate = Optional.ofNullable(0.00).orElse(0d) * 100d ;
         //保留两位小数
         System.out.println(new DecimalFormat("#.00").format(lendRate));
@@ -48,8 +53,11 @@ public class Test222 {
 
         System.out.println(atomicInteger.decrementAndGet());*/
 
-        JSONObject jsonData = new JSONObject();
-        jsonData.put("completeNotify", 0);
-        System.out.println(jsonData);
+/*        System.out.println(String.format("%0" + 3 + "d", 10000));
+
+        System.out.println(ThreadLocalRandom.current().nextLong(System.currentTimeMillis()));
+
+        System.out.println(System.currentTimeMillis());*/
+        System.out.println(EmojiUtil.isEmoji("正常"));
     }
 }
