@@ -4,11 +4,9 @@
  * @date  2020-03-18 13:51
  */
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Month;
-import java.time.Period;
-import java.time.temporal.ChronoUnit;
+import cn.hutool.json.JSONUtil;
+
+import java.util.HashMap;
 
 /**
  * @author LYH
@@ -30,14 +28,17 @@ public class TestDay {
 
         System.out.println(daysDiff);*/
 
-        LocalDate localDate = LocalDate.of(2020, Month.DECEMBER, 7);
+      /*  LocalDate localDate = LocalDate.of(2020, Month.DECEMBER, 7);
         System.out.println(Period.between(localDate,
                 LocalDateTime.now().plusDays(90).toLocalDate()).getDays()
         );
 
         System.out.println(LocalDateTime.now().plusDays(90).toLocalDate().toEpochDay() - localDate.toEpochDay());
 
-        System.out.println(ChronoUnit.DAYS.between(localDate, LocalDateTime.now().plusDays(90).toLocalDate()));
+        System.out.println(ChronoUnit.DAYS.between(localDate, LocalDateTime.now().plusDays(90).toLocalDate()));*/
+        HashMap<String, Object> hashMap = new HashMap<>(2);
+        hashMap.put("needSpecialApproval", true);
+        System.out.println(JSONUtil.toJsonStr(hashMap));
 
     }
 }
