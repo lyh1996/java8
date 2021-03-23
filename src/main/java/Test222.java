@@ -25,8 +25,6 @@
  * jgs {____/ \____}
  */
 
-import cn.hutool.extra.emoji.EmojiUtil;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -58,6 +56,8 @@ public class Test222 {
         System.out.println(ThreadLocalRandom.current().nextLong(System.currentTimeMillis()));
 
         System.out.println(System.currentTimeMillis());*/
-        System.out.println(EmojiUtil.isEmoji("正常"));
+        //System.out.println(EmojiUtil.isEmoji("正常"));
+
+        System.out.println("[\"//test.laidiantech.com/api/erp-file-center/file/MjAyMS8wMy8yMy85YjU1YjU3NDlm\"]".length());
     }
 }
