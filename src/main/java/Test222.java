@@ -25,7 +25,10 @@
  * jgs {____/ \____}
  */
 
+import java.time.LocalDate;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author LYH
@@ -59,5 +62,29 @@ public class Test222 {
         //System.out.println(EmojiUtil.isEmoji("正常"));
 
         System.out.println("[\"//test.laidiantech.com/api/erp-file-center/file/MjAyMS8wMy8yMy85YjU1YjU3NDlm\"]".length());
+
+
+        //Socket client = new Socket("127.0.0.1", 9999);
+
+        System.out.println(LocalDate.now().plusMonths(0).withDayOfMonth(30));
+
+        // {}里面的数字可以用来指定前后缀的长度
+        String str = "123456789";
+        System.out.println(handle(str));
+
+    }
+
+    public static String handle(String str) {
+        String regex = "(\\w{4})(.*)(\\w{4})";
+        Matcher m = Pattern.compile(regex).matcher(str);
+        if (m.find()) {
+            String rep = m.group(2);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < rep.length(); i++) {
+                sb.append("*");
+            }
+            return str.replaceAll(rep, sb.toString());
+        }
+        return str;
     }
 }
