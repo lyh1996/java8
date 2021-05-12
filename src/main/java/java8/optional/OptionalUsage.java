@@ -1,6 +1,5 @@
 package java8.optional;
 
-import java.lang.management.BufferPoolMXBean;
 import java.util.Optional;
 
 /**

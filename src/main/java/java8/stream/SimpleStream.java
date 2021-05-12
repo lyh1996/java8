@@ -1,5 +1,11 @@
 package java8.stream;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
 
 /**

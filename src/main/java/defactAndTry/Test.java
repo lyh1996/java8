@@ -6,7 +6,12 @@
 package defactAndTry;
 
 import JavaBase.Result;
-import com.github.rholder.retry.*;
+import com.github.rholder.retry.AttemptTimeLimiters;
+import com.github.rholder.retry.RetryException;
+import com.github.rholder.retry.Retryer;
+import com.github.rholder.retry.RetryerBuilder;
+import com.github.rholder.retry.StopStrategies;
+import com.github.rholder.retry.WaitStrategies;
 import com.google.common.base.Predicates;
 
 import java.util.concurrent.Callable;
