@@ -168,6 +168,7 @@ isMap.forEach((k,v) -> {
 
 //排序操作
             results = results.stream().sorted(Comparator.comparing(DivideDTO::getLendRate)).collect(Collectors.toList());
+
     /**
     * 将对象属性转化为map结合
     */
