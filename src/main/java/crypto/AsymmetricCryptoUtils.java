@@ -1,6 +1,5 @@
 package crypto;
 
-import cn.hutool.core.codec.Base64;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.io.FileUtil;
@@ -11,7 +10,6 @@ import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.RSA;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import sun.misc.BASE64Decoder;
 
 import java.io.IOException;
 import java.security.KeyFactory;
@@ -22,6 +20,7 @@ import java.security.PublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -70,13 +69,13 @@ public class AsymmetricCryptoUtils {
             // 保存私钥
             byte[] privateKey = pair.getPrivate().getEncoded();
             FileUtil.writeBytes(privateKey, privateKeyUrl);
-            log.info("{}的私钥保存地址：{}", name, privateKeyUrl);
+            //log.info("{}的私钥保存地址：{}", name, privateKeyUrl);
             // 保存公钥
-            String publicKey = Base64.encode(pair.getPublic().getEncoded());
+            String publicKey = cn.hutool.core.codec.Base64.encode(pair.getPublic().getEncoded());
             FileUtil.writeUtf8String(publicKey, publicKeyUrl);
-            log.info("{}的公钥保存地址：{}", name, publicKeyUrl);
+            //log.info("{}的公钥保存地址：{}", name, publicKeyUrl);
         } else {
-            log.info("{}对应的密钥对已存在", name);
+            //log.info("{}对应的密钥对已存在", name);
         }
         HashMap<String, String> map = CollUtil.newHashMap();
         map.put("publicKeyPath", publicKeyPath);
@@ -116,7 +115,8 @@ public class AsymmetricCryptoUtils {
      */
     public static PublicKey getPublicKey(String name) throws NoSuchAlgorithmException, InvalidKeySpecException, IOException {
         String keyStr = FileUtil.readUtf8String(ROOT_PATH + "/cer/" + name + ".cer");
-        byte[] keyBytes = (new BASE64Decoder()).decodeBuffer(keyStr);
+        Base64.Decoder decoder = Base64.getMimeDecoder();
+        byte[] keyBytes = decoder.decode(keyStr);
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance(ALGORITHM);
         return keyFactory.generatePublic(keySpec);
@@ -249,7 +249,8 @@ public class AsymmetricCryptoUtils {
      * @return the boolean
      * @author "lixingwu"
      */
-    public static boolean rverify(String name, String sign, String content) throws InvalidKeySpecException, NoSuchAlgorithmException, IOException {
+    public static boolean rverify(String name, String sign, String content)
+            throws InvalidKeySpecException, NoSuchAlgorithmException, IOException {
         // 签名内容sign公钥数据解密后得到内容MD5
         String rdecrypt = rdecrypt(sign, name);
         // 把解密得到的MD5和实际内容content的MD5进行对比
@@ -294,7 +295,8 @@ public class AsymmetricCryptoUtils {
      * @throws IOException              the io exception
      * @author "lixingwu"
      */
-    public static boolean uverify(String name, String sign, String content) throws InvalidKeySpecException, NoSuchAlgorithmException, IOException {
+    public static boolean uverify(String name, String sign, String content)
+            throws InvalidKeySpecException, NoSuchAlgorithmException, IOException {
         // 签名内容sign公钥数据解密后得到内容MD5
         String udecrypt = udecrypt(sign, name);
         // 把解密得到的MD5和实际内容content的MD5进行对比

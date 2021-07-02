@@ -5,16 +5,19 @@
  */
 package optional;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
-
 /**
  * @author LYH
  * @date 2020/10/16 14:49
  */
-@Data
-@Accessors(chain = true)
 public class Clazz1 {
 
     private Clazz2 clazz2;
+
+    public Clazz2 getClazz2() {
+        return clazz2;
+    }
+
+    public void setClazz2(Clazz2 clazz2) {
+        this.clazz2 = clazz2;
+    }
 }

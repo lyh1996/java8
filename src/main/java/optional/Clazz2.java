@@ -5,14 +5,19 @@
  */
 package optional;
 
-import lombok.Data;
-
 /**
  * @author LYH
  * @date 2020/10/16 14:49
  */
-@Data
 public class Clazz2 {
 
     private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

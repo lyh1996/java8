@@ -26,18 +26,18 @@ public class ForOptimizationTest {
 
         long start = System.currentTimeMillis();
 
-        for (int i =0 ; i< 5000; i++){
+/*        for (int i =0 ; i< 5000; i++){
             User user = User.builder().name("lyh"+i).age(12 + i).build();
 
             list1.add(user);
-        }
-
+        }*/
+/*
         for (int i =0 ; i< 5000; i++) {
 
             User user2 = User.builder().age(12 + i).build();
 
             list2.add(user2);
-        }
+        }*/
 
         //方法一
         /*for (Student us : list1 ) {

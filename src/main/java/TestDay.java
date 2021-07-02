@@ -4,9 +4,8 @@
  * @date  2020-03-18 13:51
  */
 
-import cn.hutool.json.JSONUtil;
-
-import java.util.HashMap;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author LYH
@@ -36,9 +35,9 @@ public class TestDay {
         System.out.println(LocalDateTime.now().plusDays(90).toLocalDate().toEpochDay() - localDate.toEpochDay());
 
         System.out.println(ChronoUnit.DAYS.between(localDate, LocalDateTime.now().plusDays(90).toLocalDate()));*/
-        HashMap<String, Object> hashMap = new HashMap<>(2);
-        hashMap.put("needSpecialApproval", true);
-        System.out.println(JSONUtil.toJsonStr(hashMap));
+        Integer str = null;
+        List<Integer> list = Collections.singletonList(str);
+        System.out.println(list);
 
     }
 }

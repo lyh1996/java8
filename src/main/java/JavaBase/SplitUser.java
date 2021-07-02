@@ -1,13 +1,5 @@
 package JavaBase;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.TreeSet;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 /**
  * @author 633805 LYH
  * @version V1.0
@@ -16,7 +8,7 @@ import java.util.stream.Stream;
  * @since 1.7
  */
 public class SplitUser {
-    public static void main(String[] args) {
+    public static void main(String[] args) {/*
         User user = User.builder().age(12).name("lyh").build();
         User user2 = User.builder().age(11).build();
         User user4 = User.builder().age(13).build();
@@ -27,8 +19,8 @@ public class SplitUser {
         List<User> list = Stream.of(user, user2, user4).collect(Collectors.toList());
         List<User> list2 = Stream.of(user3, user5, user6).collect(Collectors.toList());
 
-        /*list.forEach(System.out::println);
-        list2.forEach(System.out::println);*/
+        *//*list.forEach(System.out::println);
+        list2.forEach(System.out::println);*//*
 
         list2.forEach(s -> {
             list.removeIf(entity -> entity.getAge().equals(s.getAge()));
@@ -59,7 +51,7 @@ public class SplitUser {
         listuser = listuser.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()->new TreeSet<>(Comparator.comparing(User::getName))), ArrayList::new));
         listuser.forEach(System.out::println);
 
-
+*/
 
     }
 }

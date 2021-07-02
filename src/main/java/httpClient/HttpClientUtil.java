@@ -11,7 +11,6 @@ package httpClient;
  */
 
 import com.alibaba.fastjson.JSON;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -42,6 +41,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.CoreConnectionPNames;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLException;
@@ -71,8 +72,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-@Slf4j
 public class HttpClientUtil {
+    private static final Logger log = LoggerFactory.getLogger(HttpClientUtil.class);
+
     public static final String CONTENT_TYPE = "application/json";
     public static final int CONNTIMEOUT = 10000;
     public static final int READTIMEOUT = 10000;
@@ -105,7 +107,7 @@ public class HttpClientUtil {
     public static String postJson(String url, String body, String mimeType,
                                   String CHARSET, Integer CONNTIMEOUT, Integer READTIMEOUT, Map<String, String> headers)
             throws Exception {
-        log.info("发送HTTP(S) POST 请求：" + url + " | " + mimeType + " | " + CHARSET + " | " + CONNTIMEOUT + " | " + READTIMEOUT);
+        //log.info("发送HTTP(S) POST 请求：" + url + " | " + mimeType + " | " + CHARSET + " | " + CONNTIMEOUT + " | " + READTIMEOUT);
         HttpClient client = null;
         HttpResponse res = null;
         HttpPost post = new HttpPost(url);

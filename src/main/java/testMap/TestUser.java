@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author 633805 LYH
@@ -19,7 +18,7 @@ import java.util.stream.Stream;
  */
 public class TestUser {
     public static void main(String[] args) {
-        User user = User.builder().age(12).name("lyh").build();
+        /*User user = User.builder().age(12).name("lyh").build();
         User user2 = User.builder().age(11).build();
         User user4 = User.builder().age(13).build();
         User user3 = User.builder().age(12).name("lyh").build();
@@ -49,7 +48,7 @@ public class TestUser {
         set.forEach(System.out::println);
 
 
-
+*/
     }
 
     public static List<Integer> getAllages(List<User>userlist){

@@ -1,7 +1,5 @@
 package testMap;
 
-import lombok.Data;
-
 import java.util.List;
 
 /**
@@ -11,7 +9,6 @@ import java.util.List;
  * @create 2019-06-24 18:45
  * @since 1.7
  */
-@Data
 public class B {
 
     private boolean isflag;
@@ -20,4 +17,27 @@ public class B {
 
     private List<C> list;
 
+    public boolean isIsflag() {
+        return isflag;
+    }
+
+    public void setIsflag(boolean isflag) {
+        this.isflag = isflag;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public List<C> getList() {
+        return list;
+    }
+
+    public void setList(List<C> list) {
+        this.list = list;
+    }
 }

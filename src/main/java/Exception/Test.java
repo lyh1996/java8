@@ -1,6 +1,7 @@
 package Exception;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author 633805 LYH
@@ -9,8 +10,9 @@ import lombok.extern.slf4j.Slf4j;
  * @create 2019-04-24 8:16
  * @since 1.7
  */
-@Slf4j
 public class Test {
+    private static final Logger log = LoggerFactory.getLogger(Test.class);
+
     public static void main(String[] args) {
         int count = 0;
         try {

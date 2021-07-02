@@ -6,7 +6,8 @@
 package repeatRequest;
 
 import com.alibaba.fastjson.JSON;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.xml.bind.DatatypeConverter;
 import java.security.MessageDigest;
@@ -18,8 +19,9 @@ import java.util.TreeMap;
  * @author LYH
  * @date 2020/11/18 15:07
  */
-@Slf4j
 public class ReqDedupHelper {
+    private static final Logger log = LoggerFactory.getLogger(ReqDedupHelper.class);
+
 
     /**
      * @param reqJSON     请求的参数，这里通常是JSON

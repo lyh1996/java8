@@ -6,8 +6,6 @@
 package codeTimeStatistics.stopWatch;
 
 import codeTimeStatistics.common.TimeUtils;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.springframework.lang.Nullable;
 
 import java.util.HashMap;
@@ -35,8 +33,11 @@ public class TraceWatch {
     @Nullable
     private String currentTaskName;
 
-    @Getter
     private final Map<String, List<TaskInfo>> taskMap = new HashMap<>();
+
+    public Map<String, List<TaskInfo>> getTaskMap() {
+        return taskMap;
+    }
 
     /**
      * 开始时间差类型指标记录，如果需要终止，请调用 {@link #stop()}
@@ -79,12 +80,23 @@ public class TraceWatch {
         this.taskMap.computeIfAbsent(taskName, e -> new LinkedList<>()).add(info);
     }
 
-    @Getter
-    @AllArgsConstructor
     public static final class TaskInfo {
         private final String taskName;
 
 
         private final Object data;
+
+        public TaskInfo(String taskName, Object data) {
+            this.taskName = taskName;
+            this.data = data;
+        }
+
+        public String getTaskName() {
+            return taskName;
+        }
+
+        public Object getData() {
+            return data;
+        }
     }
 }

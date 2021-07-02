@@ -1,4 +1,3 @@
-import JavaBase.User;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 
@@ -35,8 +34,8 @@ public class TestMobilphone {
         System.out.println( DateUtil.format(getBeginDayOfLastMonth(), "yyyy-MM-dd"));
         System.out.println( DateUtil.format(getEndDayOfLastMonth(), "yyyy-MM-dd"));
 
-        User user = new User();
-        System.out.println(user==null);
+/*        User user = new User();
+        System.out.println(user == null);*/
 
         Integer a = null;
         Integer b = 12;

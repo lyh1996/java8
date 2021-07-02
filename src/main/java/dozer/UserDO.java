@@ -1,9 +1,5 @@
 package dozer;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 import java.io.Serializable;
 
 /**
@@ -13,9 +9,6 @@ import java.io.Serializable;
  * @create 2019-05-20 10:53
  * @since 1.7
  */
-@Setter
-@Getter
-@ToString
 public class UserDO implements Serializable {
 
 
@@ -35,4 +28,27 @@ public class UserDO implements Serializable {
      */
     private Integer userAge;
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getUserAge() {
+        return userAge;
+    }
+
+    public void setUserAge(Integer userAge) {
+        this.userAge = userAge;
+    }
 }

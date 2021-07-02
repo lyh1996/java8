@@ -1,12 +1,5 @@
 package JavaBase;
 
-import com.google.common.collect.Lists;
-
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 /**
  * @author 633805 LYH
  * @version V1.0
@@ -18,6 +11,7 @@ public class AddAllTest {
 
     public static void main(String[] args) {
 
+/*
         User user = User.builder().name("lyh").build();
         User user2 = User.builder().name("lyh2").build();
 
@@ -52,6 +46,7 @@ public class AddAllTest {
         System.out.println("大小" + moreUser.size());
 
         System.out.println(System.currentTimeMillis() - start2);
+*/
 
 
 /*
