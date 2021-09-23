@@ -36,13 +36,17 @@ public class Base64Test {
             */
         try {
             //编码
-            String result= Base64Encoder.encode("德邦",Charset.forName("gb2312")) ;
+            String result = Base64Encoder.encode("德邦", Charset.forName("gb2312"));
 
             System.out.println(result);
 
             //解码
-            String  decode = Base64Decoder.decodeStr("tcKw7g==", Charset.forName("gb2312"));
+            String decode = Base64Decoder.decodeStr("AZVgsYRXJ5uB1JoPX94GONw=", Charset.forName("gb2312"));
             System.out.println(decode);
+
+            String result2 = Base64Encoder.encode("15874716591", Charset.forName("gb2312"));
+
+            System.out.println(result2);
 
         } catch (Exception e) {
             e.printStackTrace();

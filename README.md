@@ -103,24 +103,16 @@ public static Set<Integer> getAllagesSET(List<User>userlist){
 19.变成分组Map
 Map<Integer, List<User>> map = list.stream().collect(Collectors.groupingBy(User::getAge));
 
-20.特殊的Map  键根据条件来设置
-Map<Boolean, List<User>> isMap = list.stream().collect(Collectors.partitioningBy(u -> u.getAge() > 12 ));
+20.特殊的Map 键根据条件来设置 Map<Boolean, List<User>> isMap = list.stream().collect(Collectors.partitioningBy(u -> u.getAge() >
+12 ));
 
-21.Map的迭代
-isMap.forEach((k,v) -> {
-            System.out.println("键：" + k);
-            System.out.println("值：" + v);
-        });
+21.Map的迭代 isMap.forEach((k,v) -> { System.out.println("键：" + k); System.out.println("值：" + v); });
 
+22 Map的排序 // 排序 根据指定的展示顺序 进行排序 deviceTypeMap.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.comparing(
+SiteDeviceTypeEnum::getSortId))). forEachOrdered(x -> sortDeviceType.put(x.getKey(), x.getValue()));
 
-
-
- public static <T, V> Set<T> toSet(Collection<V> collection, Function<V, T> f) {
-        if (CollectionUtils.isNotEmpty(collection)) {
-            return toStream(collection, f).collect(Collectors.toSet());
-        } else {
-            return Collections.emptySet();
-        }
+public static <T, V> Set<T> toSet(Collection<V> collection, Function<V, T> f) { if (CollectionUtils.isNotEmpty(
+collection)) { return toStream(collection, f).collect(Collectors.toSet()); } else { return Collections.emptySet(); }
     }
 
     public static <T, V> List<T> toList(Collection<V> collection, Function<V, T> f) {

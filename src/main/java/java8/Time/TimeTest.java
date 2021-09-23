@@ -21,7 +21,7 @@ public class TimeTest {
         // 程序开始时间
         Instant startTime =Instant.now();
 
-        // 主要是Period类方法getYears（），getMonths（）和getDays（）来计算.
+        // 主要是Period类方法getYears（），getMonths（）和getDays（）来计算. // 注意：只能比较当年类的时间差
         LocalDate today = LocalDate.now();
         System.out.println("Today : " + today);
         LocalDate birthDate = LocalDate.of(1996, Month.MARCH, 3);

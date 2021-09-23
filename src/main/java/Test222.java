@@ -25,10 +25,15 @@
  * jgs {____/ \____}
  */
 
-import java.time.LocalDate;
+import com.google.common.collect.Lists;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * @author LYH
@@ -39,38 +44,49 @@ public class Test222 {
     public static AtomicInteger count = new AtomicInteger(0);
 
     public static void main(String[] args) throws InterruptedException {
-       /* double lendRate = Optional.ofNullable(0.00).orElse(0d) * 100d ;
-        //保留两位小数
-        System.out.println(new DecimalFormat("#.00").format(lendRate));
+        List<String> list1 = new ArrayList<>();
+        list1.add("a");
+        list1.add("b");
+        list1.add("c");
+        List<String> list2 = new ArrayList<>();
+        list2.add("a");
+        list2.add("b");
+        list2.add("d");
+        //list1.retainAll(list2);
+        //System.out.println(list1); // 输出[a, b]
 
-        System.out.println(BigDecimal.valueOf(lendRate)+"%");
+       /* // 并集
+        Collection<String> union = CollectionUtils.union(list1, list2);
+        System.out.println(union);
+        // 交集
+        Collection<String> intersection = CollectionUtils.intersection(list1, list2);
+        System.out.println(intersection);
+        // 交集的补集
+        Collection<String> disjunction = CollectionUtils.disjunction(list1, list2);
+        System.out.println(disjunction);
+        // 集合相减
+        Collection<String> subtract = CollectionUtils.subtract(list1, list2);
+        System.out.println(subtract);
+        Collection<String> subtract2 = CollectionUtils.subtract(list2, list1);
+        System.out.println(subtract2);
+        List<String> stings = (List<String>) subtract;*/
+/*        HashMap<String, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < 10; i++) {
+            hashMap.put(i + "s", i++);
+        }
+        System.out.println(hashMap);
+        Integer num = null;
+        HashMap<String, String> strMap = new HashMap<>();
+        strMap.put("1", Objects.isNull(num) ? "" : String.valueOf(num));
+        System.out.println(strMap);*/
+        TestThread testThread = new TestThread();
+        List<TestThread> list = Lists.newArrayList();
+        List<String> onLineDeviceIds =
+                list.stream().filter(smart -> Objects.equals(smart.getStr(), 1)).map(TestThread::getStr)
+                        .collect(Collectors.toList());
 
-        int a = 40;
-        BigDecimal num = BigDecimal.valueOf(40).divide(BigDecimal.valueOf(100), 2, BigDecimal.ROUND_HALF_UP);
+        System.out.println(onLineDeviceIds);
 
-        System.out.println(BigDecimal.valueOf(0.3).compareTo(num) > 0);
-
-        AtomicInteger atomicInteger = new AtomicInteger(10);
-
-        System.out.println(atomicInteger.decrementAndGet());*/
-
-/*        System.out.println(String.format("%0" + 3 + "d", 10000));
-
-        System.out.println(ThreadLocalRandom.current().nextLong(System.currentTimeMillis()));
-
-        System.out.println(System.currentTimeMillis());*/
-        //System.out.println(EmojiUtil.isEmoji("正常"));
-
-        System.out.println("[\"//test.laidiantech.com/api/erp-file-center/file/MjAyMS8wMy8yMy85YjU1YjU3NDlm\"]".length());
-
-
-        //Socket client = new Socket("127.0.0.1", 9999);
-
-        System.out.println(LocalDate.now().plusMonths(0).withDayOfMonth(30));
-
-        // {}里面的数字可以用来指定前后缀的长度
-        String str = "123456789";
-        System.out.println(handle(str));
 
     }
 

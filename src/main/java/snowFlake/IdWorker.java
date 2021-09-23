@@ -34,16 +34,18 @@ public class IdWorker {
         this.workerId = workerId;
         this.datacenterId = datacenterId;
     }
+
     public synchronized long nextId() {
-        long  timestamp = timeGen();
+        long timestamp = timeGen();
         //时间回拨抛出异常
         if (timestamp < lastTimestamp) {
             System.err.printf("clock moving backwards, Rejecting requests until %d", lastTimestamp);
-            throw new RuntimeException(String.format("Clock moved backwards.  Refushing to generate id for %d millseconds", lastTimestamp = timestamp));
+            throw new RuntimeException(
+                    String.format("Clock moved backwards.  Refushing to generate id for %d millseconds", lastTimestamp = timestamp));
         }
         if (lastTimestamp == timestamp) {
             sequence = (sequence + 1) & sequenceMask;
-            if(sequence == 0) {
+            if (sequence == 0) {
                 timestamp = tilNextMillis(lastTimestamp);
             }
         } else {
@@ -56,6 +58,7 @@ public class IdWorker {
 
     /**
      * 当前ms已经满了
+     *
      * @param lastTimestamp
      * @return
      */
@@ -72,7 +75,7 @@ public class IdWorker {
     }
 
     public static void main(String[] args) {
-        IdWorker worker =new IdWorker(1,1);
+        IdWorker worker = new IdWorker(1, 1);
         for (int i = 0; i < 30; i++) {
             System.out.println(worker.nextId());
         }
