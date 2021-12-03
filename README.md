@@ -28,19 +28,20 @@ List<User> list2 = Stream.of(user3, user5, user6).collect(Collectors.toList());
 List<User> aa = listuser.stream().distinct().collect(Collectors.toList());
 
 5去除重复的对象(根据指定属性)
-list3 = list3.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()->new TreeSet<>(Comparator.comparing(User::getName))), ArrayList::new));
+list3 = list3.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()->new TreeSet<>(
+Comparator.comparing(User::getName))), ArrayList::new));
 
-6.List<Object>变String ，以指定符号进行拼接
- String names = list1.stream().map(JSON::toJSONString).collect(Collectors.joining("|"));
- 
-7.将String转换成List<String> 以指定符号分割
-List<String> list3 = Arrays.stream(names.split("\\|")).map(String::trim).collect(Collectors.toList());
+6.List<Object>变String ，以指定符号进行拼接 法一：String names = list1.stream().map(JSON::toJSONString).collect(Collectors.joining("
+|")); 法二：StringUtils.join(list.toArray(),separator)
+法三：String.join(",", list)
+法三：Joiner.on(",").join(list)
+7.将String转换成List<String> 以指定符号分割 List<String> list3 = Arrays.stream(names.split("\\|")).map(String::trim).collect(
+Collectors.toList());
 
 将String变成List<Long>
-private List<Long> stringToLongList (String strArr){
-        return Arrays.stream(strArr.split(","))
-                .map(s -> Long.parseLong(s.trim()))
-                .collect(Collectors.toList());
+private List<Long> stringToLongList (String strArr){ return Arrays.stream(strArr.split(","))
+.map(s -> Long.parseLong(s.trim()))
+.collect(Collectors.toList());
 
 8.数组变List
 String[] arrays = new String[]{"a", "b", "c"};

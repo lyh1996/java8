@@ -1,8 +1,9 @@
-import cn.hutool.core.date.DateTime;
-import cn.hutool.core.date.DateUtil;
+import com.google.common.collect.Maps;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * @author 633805 LYH
@@ -14,32 +15,8 @@ import java.util.Date;
 public class TestMobilphone {
 
     public static void main(String[] args) {
-      /*  String str = "15874716591";
-        str = str.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
-        System.out.println(str);
-
-        String string = "1";
-        List<Integer> list = Arrays.stream(string.split(",")).map(s -> Integer.parseInt(s.trim())).collect(Collectors.toList());
-        System.out.println(list);*/
-        /*System.out.println(DateUtil.lastMonth());
-
-        User u = new User();
-        u.setName("");
-        if (StringUtils.isNotBlank(u.getName())) {
-            System.out.println("哈哈哈");
-        }
-        List<User> list = Lists.newArrayList();*/
-        Date time = DateUtil.offsetDay(new DateTime(), -30);
-        System.out.println( DateUtil.format(time, "yyyy-MM-dd") );
-        System.out.println( DateUtil.format(getBeginDayOfLastMonth(), "yyyy-MM-dd"));
-        System.out.println( DateUtil.format(getEndDayOfLastMonth(), "yyyy-MM-dd"));
-
-/*        User user = new User();
-        System.out.println(user == null);*/
-
-        Integer a = null;
-        Integer b = 12;
-        System.out.println(b.equals(a));
+        Map<String, String> hashMap = Maps.newHashMap();
+        System.out.println(new ArrayList<>(hashMap.values()));
 
     }
 
