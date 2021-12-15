@@ -19,17 +19,19 @@ List<User> list2 = Stream.of(user3, user5, user6).collect(Collectors.toList());
 
 2.根据指定属性进行删除：
  list2.forEach(s -> { list.removeIf(entity -> entity.getAge().equals(s.getAge())); });
- 
- 
-3.将相同属性的List对象进行合并  如果只是单纯的合并 推荐使用addAll   （Function.identity()主要是用来表明操作的对象是同类型）
- List<User> list3 = Stream.of(list.stream(), list2.stream()).flatMap(Function.identity()).collect(Collectors.toList());
 
-4.去除重复对象全部属性相同
-List<User> aa = listuser.stream().distinct().collect(Collectors.toList());
+3.将相同属性的List对象进行合并 如果只是单纯的合并 推荐使用addAll （Function.identity()主要是用来表明操作的对象是同类型） List<User> list3 = Stream.of(list.stream()
+, list2.stream()).flatMap(Function.identity()).collect(Collectors.toList());
 
-5去除重复的对象(根据指定属性)
+4.去除重复对象全部属性相同 List<User> aa = listuser.stream().distinct().collect(Collectors.toList());
+
+5.去除重复的对象(根据指定属性)
 list3 = list3.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()->new TreeSet<>(
 Comparator.comparing(User::getName))), ArrayList::new));
+
+5.1:排序 List<SocialGroupMember> newNoTopList = noTopSocialGroup.stream().sorted((sort1, sort2) -> sort2.getId()
+.compareTo(sort1.getId()))
+.collect(Collectors.toList());
 
 6.List<Object>变String ，以指定符号进行拼接 法一：String names = list1.stream().map(JSON::toJSONString).collect(Collectors.joining("
 |")); 法二：StringUtils.join(list.toArray(),separator)
@@ -109,12 +111,13 @@ Map<Integer, List<User>> map = list.stream().collect(Collectors.groupingBy(User:
 
 21.Map的迭代 isMap.forEach((k,v) -> { System.out.println("键：" + k); System.out.println("值：" + v); });
 
-22 Map的排序 // 排序 根据指定的展示顺序 进行排序 deviceTypeMap.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.comparing(
+22 Map的排序 // 排序 根据指定的展示顺序 进行排序 Map<String, List<SiteDevice>> sortDeviceType = new LinkedHashMap<>(); Map<String,
+List<SiteDevice>> deviceTypeMap = devices.stream().collect(Collectors.groupingBy(SiteDevice::getDeviceType)); // 排序
+根据指定的展示顺序 进行排序 deviceTypeMap.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.comparing(
 SiteDeviceTypeEnum::getSortId))). forEachOrdered(x -> sortDeviceType.put(x.getKey(), x.getValue()));
 
 public static <T, V> Set<T> toSet(Collection<V> collection, Function<V, T> f) { if (CollectionUtils.isNotEmpty(
-collection)) { return toStream(collection, f).collect(Collectors.toSet()); } else { return Collections.emptySet(); }
-    }
+collection)) { return toStream(collection, f).collect(Collectors.toSet()); } else { return Collections.emptySet(); } }
 
     public static <T, V> List<T> toList(Collection<V> collection, Function<V, T> f) {
         if (CollectionUtils.isNotEmpty(collection)) {
