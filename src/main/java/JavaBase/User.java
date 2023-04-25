@@ -13,6 +13,9 @@ public class User implements Serializable {
 
 
     private static final long serialVersionUID = -4011696993297127295L;
+    /**
+     * 用户编号
+     */
     private String uid;
 
     private String name;
