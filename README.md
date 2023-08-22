@@ -193,3 +193,8 @@ collection)) { return toStream(collection, f).collect(Collectors.toSet()); } els
       remove(value, iterator);
      }
     }
+# 分组后进行排序
+// 根据上架日期分组取库龄统计日期最新的一条数据
+Map<Date, OmsStockAge> stockAgeGroupByShelfDate =
+stockAgeList.stream().collect(Collectors.toMap(OmsStockAge::getShelfDate, Function.identity(),
+BinaryOperator.maxBy(Comparator.comparing(OmsStockAge::getStatisticDate))));
